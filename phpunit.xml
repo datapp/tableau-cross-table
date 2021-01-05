@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/9.3/phpunit.xsd" backupGlobals="true" bootstrap="tests/bootstrap.php" convertWarningsToExceptions="false">
+    <coverage processUncoveredFiles="true">
+        <include>
+            <directory suffix=".php">src</directory>
+        </include>
+        <report>
+            <clover outputFile="test-reports/coverage.xml"/>
+            <html outputDirectory="test-reports/html" lowUpperBound="35" highLowerBound="70"/>
+            <php outputFile="test-reports/coverage.serialized"/>
+            <text outputFile="php://stdout" showUncoveredFiles="false"/>
+        </report>
+    </coverage>
+    <testsuite name="default">
+        <directory suffix="Test.php">tests</directory>
+    </testsuite>
+    <logging>
+        <junit outputFile="test-reports/logfile.xml"/>
+        <testdoxHtml outputFile="test-reports/testdox.html"/>
+        <testdoxText outputFile="test-reports/testdox.txt"/>
+    </logging>
+</phpunit>
